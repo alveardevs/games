@@ -1,4 +1,3 @@
-"use client"
 import './App.css'
 import { Unity, useUnityContext } from 'react-unity-webgl'
 import { Icon } from '@iconify/react';
@@ -8,12 +7,12 @@ function App() {
 
 
 
-  const URL = "https://byalvear.com/game-builds/sebasdices/ICP-BUILD.";
+  const URL = "https://byalvear.com/game-builds/sebasdices/";
   const { unityProvider, isLoaded } = useUnityContext({
-    loaderUrl: URL + "loader.js",
-    dataUrl: "ICP-BUILD.data.br",
-    frameworkUrl: URL + "framework.js.br",
-    codeUrl: URL + "wasm.br",
+    loaderUrl: URL + "ICP-BUILD.loader.js",
+    dataUrl: URL+"ICP-BUILD.data.br",
+    frameworkUrl: URL + "ICP-BUILD.framework.js.br",
+    codeUrl: URL + "ICP-BUILD.wasm.br",
   });
  
 
