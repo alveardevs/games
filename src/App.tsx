@@ -44,7 +44,7 @@ function App() {
             <Unity unityProvider={unityProvider} />
             
           </>
-        }
+        
 
 
       </section>
