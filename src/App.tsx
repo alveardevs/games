@@ -1,16 +1,21 @@
+"use client"
 import './App.css'
 import { Unity, useUnityContext } from 'react-unity-webgl'
 import { Icon } from '@iconify/react';
 
 
 function App() {
-  const URL = "https://byalvear.com/games/sebasdices";
+
+
+
+  const URL = "https://byalvear.com/game-builds/sebasdices/ICP-BUILD.";
   const { unityProvider, isLoaded } = useUnityContext({
-    loaderUrl: URL + "build/myunityapp.loader.js",
-    dataUrl: URL + "build/myunityapp.data",
-    frameworkUrl: URL + "build/myunityapp.framework.js",
-    codeUrl: URL + "build/myunityapp.wasm",
+    loaderUrl: URL + "loader.js",
+    dataUrl: "ICP-BUILD.data.br",
+    frameworkUrl: URL + "framework.js.br",
+    codeUrl: URL + "wasm.br",
   });
+ 
 
 
 
@@ -32,13 +37,16 @@ function App() {
       <section className=' max-w-6xl xl:w-full md:w-[95%] w-[95%] mx-auto rounded-xl shadow-2xl bg-background  border-2  h-[90dvh] my-10 flex items-center  justify-center z-20'>
 
         {isLoaded === false ? (
+          <div className="loader"></div>
 
-          <div className="loader">
-
-          </div>
-
-        ) :
-          <Unity unityProvider={unityProvider} />}
+        ) : 
+          <>
+            <Unity unityProvider={unityProvider}
+              style={{ visibility: isLoaded ? 'visible' : 'hidden' }}
+            />
+            
+          </>
+        }
 
 
       </section>
