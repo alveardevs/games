@@ -35,14 +35,13 @@ function App() {
       </div>
       <section className=' max-w-6xl xl:w-full md:w-[95%] w-[95%] mx-auto rounded-xl shadow-2xl bg-background  border-2  h-[90dvh] my-10 flex items-center  justify-center z-20'>
    
-        {/* {isLoaded === false ? (
+      {/* 
+        {isLoaded === false ? (
           <div className="loader"></div>
-
-        ) :  */}
+        ) : 
+      */}
           <>
-            <Unity unityProvider={unityProvider}
-              //style={{ visibility: isLoaded ? 'visible' : 'hidden' }}
-            />
+            <Unity unityProvider={unityProvider} />
             
           </>
         }
