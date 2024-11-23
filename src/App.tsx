@@ -34,14 +34,14 @@ function App() {
         <p className=' text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis deleniti dolorum quibusdam laborum eius dicta non quod quas. Dolorum numquam, illo recusandae quod nostrum velit laborum aliquam fugiat corrupti esse. </p>
       </div>
       <section className=' max-w-6xl xl:w-full md:w-[95%] w-[95%] mx-auto rounded-xl shadow-2xl bg-background  border-2  h-[90dvh] my-10 flex items-center  justify-center z-20'>
-
-        {isLoaded === false ? (
+   
+        {/* {isLoaded === false ? (
           <div className="loader"></div>
 
-        ) : 
+        ) :  */}
           <>
             <Unity unityProvider={unityProvider}
-              style={{ visibility: isLoaded ? 'visible' : 'hidden' }}
+              //style={{ visibility: isLoaded ? 'visible' : 'hidden' }}
             />
             
           </>
