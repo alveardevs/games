@@ -1,0 +1,45 @@
+name: 🚀 Deploy Astro a Ferozo via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Instalar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'latest'
+
+    - name: Instalar dependencias
+      run: npm install
+      
+    - name: Setear variables de entorno
+      run: |
+        echo "PROJECT_NAME=${{ secrets.PROJECT_NAME }}" >> .env
+        echo "DEPLOY_ENV=ferozo" >> .env
+        echo "IMG_URL=https://byalvear.com/img/${{ secrets.PROJECT_NAME }}" >> .env
+      env:
+        PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+      
+
+    - name: Build de la app de Astro
+      run: npm run build
+
+    - name: Instalar cliente FTP
+      run: sudo apt-get install -y lftp
+
+    - name: Subir archivos via FTP
+      env:
+        FTP_SERVER: ${{ secrets.FEROZO_USER }}.ferozo.com
+        FTP_USERNAME: ${{ secrets.FEROZO_USER }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+      run: lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -e "mirror -R --delete --verbose --parallel=20 --exclude-glob .git/ dist /public_html/games/${PROJECT_NAME}; bye" ftp://$FTP_SERVER || true
