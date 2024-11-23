@@ -7,7 +7,7 @@ function App() {
 
 
 
-  const URL = "https://byalvear.com/game-builds/sebasdices/";
+  const URL = "https://byalvear.com/game-builds/sebasdices/Build/";
   const { unityProvider, isLoaded } = useUnityContext({
     loaderUrl: URL + "ICP-BUILD.loader.js",
     dataUrl: URL+"ICP-BUILD.data.br",
