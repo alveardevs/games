@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState, useEffect } from 'react';
 import { Unity, useUnityContext } from 'react-unity-webgl';
 import { Icon } from '@iconify/react';
 
