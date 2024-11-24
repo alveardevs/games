@@ -4,12 +4,21 @@ import { Icon } from '@iconify/react';
 
 function App() {
   const URL = "https://byalvear.com/game-builds/sebasdices/Build/";
-  const { unityProvider, isLoaded } = useUnityContext({
+  const { unityProvider, addEventListener, removeEventListener } = useUnityContext({
     loaderUrl: URL + "ICP-BUILD.loader.js",
     dataUrl: URL + "ICP-BUILD.data.br",
     frameworkUrl: URL + "ICP-BUILD.framework.js.br",
     codeUrl: URL + "ICP-BUILD.wasm.br",
   });
+
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const onUnityLoaded = () => setIsLoaded(true);
+    addEventListener("loaded", onUnityLoaded);
+
+    return () => removeEventListener("loaded", onUnityLoaded);
+  }, [addEventListener, removeEventListener]);
 
   return (
     <main className="select-none relative h-full w-full text-foreground max-w-[100vw] min-h-screen flex flex-col overflow-x-hidden z-20">
