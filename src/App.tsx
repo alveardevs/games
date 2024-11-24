@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 
 function App() {
   const URL = "https://byalvear.com/game-builds/sebasdices/Build/";
-  const { unityProvider } = useUnityContext({
+  const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
     loaderUrl: URL + "ICP-BUILD.loader.js",
     dataUrl: URL + "ICP-BUILD.data.br",
     frameworkUrl: URL + "ICP-BUILD.framework.js.br",
@@ -28,11 +28,14 @@ function App() {
         <div
           style={{
             position: 'relative',
-            aspectRatio: '9 / 16', // Ensures the 16:9 aspect ratio
-            width: '100%', // Ensure the container takes full width
-            maxHeight: '90vh', // Limit max height
+            aspectRatio: '9 / 16', 
+            width: '100%', 
+            maxHeight: '90vh', 
           }}
         >
+          {!isLoaded && (
+            <p>Loading Diceborn Heroes... {Math.round(loadingProgression * 100)}%</p>
+          )}
           <Unity
             unityProvider={unityProvider}
             style={{
