@@ -12,7 +12,7 @@ function App() {
   //   codeUrl: URL + "ICP-BUILD.wasm.br",
   // });
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
-    loaderUrl: URL + "unity-webgl-build.loader.js",x
+    loaderUrl: URL + "unity-webgl-build.loader.js",
     dataUrl: URL + "unity-webgl-build.data",
     frameworkUrl: URL + "unity-webgl-build.framework.js",
     codeUrl: URL + "unity-webgl-build.wasm",
