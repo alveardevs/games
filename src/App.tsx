@@ -31,8 +31,7 @@ function App() {
         >
         <div style={{
               position: 'relative',
-              maxHeight: '90vh', // Optional: Limit max width
-              width: 'auto',
+              maxHeight: '90vh',
               aspectRatio: '9 / 16', // Maintains a 16:9 aspect ratio
               }}
           >
