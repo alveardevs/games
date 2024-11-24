@@ -34,8 +34,8 @@ function App() {
           }}
         >
           {!isLoaded && (
-            <div className="loader">
-              <p>{Math.round(loadingProgression * 100)}%</p>
+            <div className="loader w-full h-full">
+              <h2 className="text-xl font-bold text-center">{Math.round(loadingProgression * 100)}%</p>
             </div>
           )}
           <Unity
