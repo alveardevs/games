@@ -3,12 +3,19 @@ import { Unity, useUnityContext } from 'react-unity-webgl';
 import { Icon } from '@iconify/react';
 
 function App() {
-  const URL = "https://byalvear.com/game-builds/sebasdices/Build/";
+  // const URL = "https://byalvear.com/game-builds/sebasdices/Build/";
+  const URL = "https://w2gs2-7aaaa-aaaam-qcbaq-cai.icp0.io/";
+  // const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
+  //   loaderUrl: URL + "ICP-BUILD.loader.js",
+  //   dataUrl: URL + "ICP-BUILD.data.br",
+  //   frameworkUrl: URL + "ICP-BUILD.framework.js.br",
+  //   codeUrl: URL + "ICP-BUILD.wasm.br",
+  // });
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
-    loaderUrl: URL + "ICP-BUILD.loader.js",
-    dataUrl: URL + "ICP-BUILD.data.br",
-    frameworkUrl: URL + "ICP-BUILD.framework.js.br",
-    codeUrl: URL + "ICP-BUILD.wasm.br",
+    loaderUrl: URL + "unity-webgl-build.loader.js",x
+    dataUrl: URL + "unity-webgl-build.data",
+    frameworkUrl: URL + "unity-webgl-build.framework.js",
+    codeUrl: URL + "unity-webgl-build.wasm",
   });
 
   return (
@@ -19,7 +26,7 @@ function App() {
             Preparate para jugar <Icon icon="tabler:device-gamepad" className="size-6" />
           </div>
         </div>
-        <h1 className="text-7xl font-bold text-center tracking-tight leading-[4rem]">Diceborn Heroes</h1>
+        <h1 className="text-7xl font-bold text-center tracking-tight leading-[4rem]">Rollcraft</h1>
         <p className="text-center">
           "🎲✨ ¡El poder está en tus dados! Personalizá sus caras con habilidades únicas, lanzalos estratégicamente y enfrentate a enemigos mientras explorás mundos generados al azar. 🌌 Cada partida es una aventura irrepetible. ¿Estás listo para dominar el azar? 🔥"
         </p>
