@@ -5,18 +5,19 @@ import { Icon } from '@iconify/react';
 function App() {
   // const URL = "https://byalvear.com/game-builds/sebasdices/Build/";
   const URL = "https://w2gs2-7aaaa-aaaam-qcbaq-cai.icp0.io/";
-  // const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
-  //   loaderUrl: URL + "ICP-BUILD.loader.js",
-  //   dataUrl: URL + "ICP-BUILD.data.br",
-  //   frameworkUrl: URL + "ICP-BUILD.framework.js.br",
-  //   codeUrl: URL + "ICP-BUILD.wasm.br",
-  // });
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
-    loaderUrl: URL + "unity-webgl-build.loader.js",
-    dataUrl: URL + "unity-webgl-build.data",
-    frameworkUrl: URL + "unity-webgl-build.framework.js",
-    codeUrl: URL + "unity-webgl-build.wasm",
+    loaderUrl: URL + "Build.loader.js",
+    dataUrl: URL + "Build.data.br",
+    frameworkUrl: URL + "Build.framework.js.br",
+    codeUrl: URL + "Build.wasm.br",
   });
+
+  // const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
+  //   loaderUrl: URL + "unity-webgl-build.loader.js",
+  //   dataUrl: URL + "unity-webgl-build.data",
+  //   frameworkUrl: URL + "unity-webgl-build.framework.js",
+  //   codeUrl: URL + "unity-webgl-build.wasm",
+  // });
 
   return (
     <main className="select-none relative h-full w-full text-foreground max-w-[100vw] min-h-screen flex flex-col overflow-x-hidden z-20">
