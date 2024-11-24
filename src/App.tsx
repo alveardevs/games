@@ -7,9 +7,9 @@ function App() {
   const URL = "https://w2gs2-7aaaa-aaaam-qcbaq-cai.icp0.io/";
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
     loaderUrl: URL + "Build.loader.js",
-    dataUrl: URL + "Build.data.br",
-    frameworkUrl: URL + "Build.framework.js.br",
-    codeUrl: URL + "Build.wasm.br",
+    dataUrl: URL + "Build.data",
+    frameworkUrl: URL + "Build.framework.js",
+    codeUrl: URL + "Build.wasm",
   });
 
   // const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
