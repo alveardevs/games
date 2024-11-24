@@ -24,23 +24,25 @@ function App() {
           "🎲✨ ¡El poder está en tus dados! Personalizá sus caras con habilidades únicas, lanzalos estratégicamente y enfrentate a enemigos mientras explorás mundos generados al azar. 🌌 Cada partida es una aventura irrepetible. ¿Estás listo para dominar el azar? 🔥"
         </p>
       </div>
-      <section className="w-full sm:max-w-[500px]  mx-auto rounded-xl shadow-2xl bg-background border-2 h-[90vh] my-10 flex items-center justify-center z-20">
-        <div style={{
-              position: 'relative',
-              aspectRatio: '9 / 16',
-              maxHeight: '90vh'
-              }}
-          >
-            <Unity
-              unityProvider={unityProvider}
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-              }}
-            />
+      <section className="w-full sm:max-w-[500px] mx-auto rounded-xl shadow-2xl bg-background border-2 h-[90vh] my-10 flex items-center justify-center z-20">
+        <div
+          style={{
+            position: 'relative',
+            aspectRatio: '9 / 16', // Ensures the 16:9 aspect ratio
+            width: '100%', // Ensure the container takes full width
+            maxHeight: '90vh', // Limit max height
+          }}
+        >
+          <Unity
+            unityProvider={unityProvider}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+            }}
+          />
         </div>
       </section>
     </main>
