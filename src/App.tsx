@@ -34,7 +34,9 @@ function App() {
           }}
         >
           {!isLoaded && (
-            <p>Loading Diceborn Heroes... {Math.round(loadingProgression * 100)}%</p>
+            <div class="loader">
+              <p>{Math.round(loadingProgression * 100)}%</p>
+            </div>
           )}
           <Unity
             unityProvider={unityProvider}
